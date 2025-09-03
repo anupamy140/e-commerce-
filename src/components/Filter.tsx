@@ -1,7 +1,5 @@
 "use client";
-
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-
 const Filter = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -29,20 +27,7 @@ const Filter = () => {
           <option value="physical">Physical</option>
           <option value="digital">Digital</option>
         </select>
-        <input
-          type="text"
-          name="min"
-          placeholder="min price"
-          className="text-xs rounded-2xl pl-2 w-24 ring-1 ring-gray-400"
-          onChange={handleFilterChange}
-        />
-        <input
-          type="text"
-          name="max"
-          placeholder="max price"
-          className="text-xs rounded-2xl pl-2 w-24 ring-1 ring-gray-400"
-          onChange={handleFilterChange}
-        />
+
         {/* TODO: Filter Categories */}
         <select
           name="cat"
@@ -69,8 +54,6 @@ const Filter = () => {
           onChange={handleFilterChange}
         >
           <option>Sort By</option>
-          <option value="asc price">Price (low to high)</option>
-          <option value="desc price">Price (high to low)</option>
           <option value="asc lastUpdated">Newest</option>
           <option value="desc lastUpdated">Oldest</option>
         </select>
@@ -78,5 +61,4 @@ const Filter = () => {
     </div>
   );
 };
-
 export default Filter;
